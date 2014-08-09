@@ -27,4 +27,11 @@
 /web-app/plugins
 
 # "temporary" build files
-/target
+**/target
+
+# intellij personal workspace configuration file
+**/*.iws
+
+# .DS_Store mac file
+**/.DS_Store
+
