@@ -7,7 +7,13 @@ class User extends SecUser {
     String phone
     Date dateCreated
     Date dateUpdated
-    Area area
+    String name
+    String idCard
+    String im
+    String memo
+    String reserve1
+    String reserve2
+    String reserve3
     Organization organization
 
     static constraints = {
@@ -16,8 +22,14 @@ class User extends SecUser {
         phone nullable: true
         dateCreated nullable: true
         dateUpdated nullable: true
-        area nullable: false
         organization nullable: false
+        name nullable: true
+        idCard nullable: true, size: 1..32
+        im nullable: true
+        memo nullable: true
+        reserve1 nullable: true, size: 1..256
+        reserve2 nullable: true, size: 1..256
+        reserve3 nullable: true, size: 1..256
     }
 
     String toString() {
