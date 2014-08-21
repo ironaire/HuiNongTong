@@ -1,0 +1,79 @@
+/*
+My custom CSS
+==============================
+*/
+
+/*  ---------------------------------
+    Layout
+    --------------------------------- */
+
+body {
+    padding-bottom: 40px;
+}
+
+footer {
+    font-size: 12px;
+    background: #fff;
+    text-align: center;
+}
+
+.navbar-fixed-bottom > li > a {padding-top:5px !important; padding-bottom:5px !important;}
+.navbar {min-height:32px !important}
+
+/*  ---------------------------------------
+    table odd and even, pagination
+    ---------------------------------------*/
+
+table {
+    margin-top: 10px;
+}
+/*
+.odd {
+    background: #f7f7f7;
+}
+
+.even {
+    background: #ffffff;
+}
+
+
+.pagination a,
+.pagination .currentStep {
+    color: #666666;
+    display: inline-block;
+    margin: 0 0.1em;
+    padding: 0.25em 0.7em;
+    text-decoration: none;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+
+.pagination a:hover, .pagination a:focus,
+.pagination .currentStep {
+    background-color: #999999;
+    color: #ffffff;
+    outline: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.no-borderradius .pagination a:hover, .no-borderradius .pagination a:focus,
+.no-borderradius .pagination .currentStep {
+    background-color: transparent;
+    color: #444444;
+    text-decoration: underline;
+}
+*/
+/*  --------------------------------------
+    menu
+    -------------------------------------*/
+
+
+
+
+/*  ----------------------------------------
+    general, margin, padding
+    ---------------------------------------*/
+.top10 {
+    margin-top: 10px;
+}

@@ -31,6 +31,10 @@ modules = {
         resource url: 'jqueryui/js/jquery-ui.js'
     }
 
+    custom {
+        resource url: 'css/styles.css'
+    }
+
     application {
         resource url:'js/application.js'
     }
