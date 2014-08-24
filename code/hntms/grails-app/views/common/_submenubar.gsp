@@ -11,7 +11,7 @@ This menu is used to show function that can be triggered on the content (an obje
         <g:set var="entityName"
                value="${message(code: params.controller + '.label')}"/>
 
-        <li class="${params.action == "list" ? 'active' : ''}">
+        <li class="${params.action == "index" ? 'active' : ''}">
             <g:link action="index"><i class="glyphicon glyphicon-th-list"></i> <g:message code="default.list.label"
                                                                                          args="[entityName]"/></g:link>
         </li>

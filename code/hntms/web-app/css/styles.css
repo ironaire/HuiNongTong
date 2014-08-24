@@ -77,3 +77,9 @@ table {
 .top10 {
     margin-top: 10px;
 }
+
+// form-control required style
+.form-group.required .control-label:after {
+    content: "*";
+    color: red;
+}

@@ -5,7 +5,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button> <!-- end collapse buttons -->
-        <a class="navbar-brand" href="${createLink(controller: 'home')}">
+        <a class="navbar-brand">
             <g:meta name="app.name"/>
         </a>
 

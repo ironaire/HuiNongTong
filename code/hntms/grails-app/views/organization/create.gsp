@@ -6,15 +6,7 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#create-organization" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="create-organization" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+		<div id="create-organization" class="top10 content scaffold-create" role="main">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -25,13 +17,19 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:organizationInstance, action:'save']" >
-				<fieldset class="form">
+			<g:form url="[resource:organizationInstance, action:'save']" 
+                class='form-horizontal'>
 					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
+				<div class="form-group">
+                <div class='col-xs-2 col-xs-offset-4'>
+					<g:submitButton type='submit' name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                </div>
+                <div class='col-xs-2'>
+					<g:submitButton type='reset' name="reset" 
+                        class="btn btn-primary" 
+                        value="${message(code: 'default.button.reset.label')}" />
+                </div>
+				</div>
 			</g:form>
 		</div>
 	</body>

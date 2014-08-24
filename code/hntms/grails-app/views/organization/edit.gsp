@@ -7,16 +7,7 @@
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#edit-organization" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="edit-organization" class="content scaffold-edit" role="main">
-			<h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+		<div id="edit-organization" class="top10 content scaffold-edit" role="main">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -27,14 +18,19 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:organizationInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:organizationInstance, action:'update']" method="PUT"
+                class='form-horizontal'>
 				<g:hiddenField name="version" value="${organizationInstance?.version}" />
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-				</fieldset>
+                <g:render template="form"/>
+                <div class='form-group'>
+				<div class="col-xs-2 col-xs-offset-4">
+					<g:actionSubmit class="btn btn-primary" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+				</div>
+                <div class="col-sm-2">
+                    <g:submitButton name="reset" type="reset" class="btn btn-primary" value="${message(code:
+                        'default.button.reset.label')}"/>
+                </div>
+                </div>
 			</g:form>
 		</div>
 	</body>

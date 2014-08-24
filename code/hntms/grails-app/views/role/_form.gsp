@@ -2,12 +2,14 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: roleInstance, field: 'authority', 'error')} required">
-	<label for="authority">
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="authority">
 		<g:message code="role.authority.label" default="Authority" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="authority" required="" value="${roleInstance?.authority}"/>
+    <div class='col-xs-4'>
+	<g:textField class='form-control' name="authority" required="" value="${roleInstance?.authority}"/>
+    </div>
 
 </div>
 

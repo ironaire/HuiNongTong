@@ -6,8 +6,7 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div id="create-area" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
+		<div id="create-area" class="top10 row">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -18,13 +17,19 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:areaInstance, action:'save']" >
-				<fieldset class="form">
+			<g:form class='form-horizontal' url="[resource:areaInstance, action:'save']" >
 					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
+				<div class="form-group">
+                    <div class='col-xs-2 col-xs-offset-4'>
+					<g:submitButton name="create" class="btn btn-primary"
+                        value="${message(code: 'default.button.create.label')}" />
+                    </div>
+                <div class='col-xs-2'>
+					<g:submitButton type='reset' name="reset" 
+                        class="btn btn-primary" 
+                        value="${message(code: 'default.button.reset.label')}" />
+                </div>
+				</div>
 			</g:form>
 		</div>
 	</body>

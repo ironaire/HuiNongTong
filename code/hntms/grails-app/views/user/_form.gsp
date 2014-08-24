@@ -1,166 +1,200 @@
 <%@ page import="com.xpi.settle.sys.User" %>
 
-
-
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'username', 'error')} required">
-	<label for="username">
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="username">
 		<g:message code="user.username.label" default="Username" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="username" required="" value="${userInstance?.username}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="username" required="" value="${userInstance?.username}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'password', 'error')} required">
-	<label for="password">
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="password">
 		<g:message code="user.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" required="" value="${userInstance?.password}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="password" required="" value="${userInstance?.password}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'email', 'error')} required">
-	<label for="email">
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="email">
 		<g:message code="user.email.label" default="Email" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="email" name="email" maxlength="32" required="" value="${userInstance?.email}"/>
+<div class='col-sm-4'>
+	<g:field class='form-control' type="email" name="email" maxlength="32" required="" value="${userInstance?.email}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'address', 'error')} ">
-	<label for="address">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="address">
 		<g:message code="user.address.label" default="Address" />
 		
 	</label>
-	<g:textField name="address" value="${userInstance?.address}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="address" value="${userInstance?.address}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'phone', 'error')} ">
-	<label for="phone">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="phone">
 		<g:message code="user.phone.label" default="Phone" />
 		
 	</label>
-	<g:textField name="phone" value="${userInstance?.phone}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="phone" value="${userInstance?.phone}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'dateUpdated', 'error')} ">
-	<label for="dateUpdated">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="dateUpdated">
 		<g:message code="user.dateUpdated.label" default="Date Updated" />
 		
 	</label>
-	<g:datePicker name="dateUpdated" precision="day"  value="${userInstance?.dateUpdated}" default="none" noSelection="['': '']" />
+<div class='col-sm-4'>
+	<g:datePicker class='form-control' name="dateUpdated" precision="day"  value="${userInstance?.dateUpdated}" default="none" noSelection="['': '']" />
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'organization', 'error')} required">
-	<label for="organization">
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="organization">
 		<g:message code="user.organization.label" default="Organization" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="organization" name="organization.id" from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${userInstance?.organization?.id}" class="many-to-one"/>
+<div class='col-sm-4'>
+	<g:select class='form-control' id="organization" name="organization.id" from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${userInstance?.organization?.id}" class="many-to-one"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'name', 'error')} ">
-	<label for="name">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="name">
 		<g:message code="user.name.label" default="Name" />
 		
 	</label>
-	<g:textField name="name" value="${userInstance?.name}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="name" value="${userInstance?.name}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'idCard', 'error')} ">
-	<label for="idCard">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="idCard">
 		<g:message code="user.idCard.label" default="Id Card" />
 		
 	</label>
-	<g:textField name="idCard" maxlength="32" value="${userInstance?.idCard}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="idCard" maxlength="32" value="${userInstance?.idCard}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'im', 'error')} ">
-	<label for="im">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="im">
 		<g:message code="user.im.label" default="Im" />
 		
 	</label>
-	<g:textField name="im" value="${userInstance?.im}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="im" value="${userInstance?.im}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'memo', 'error')} ">
-	<label for="memo">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="memo">
 		<g:message code="user.memo.label" default="Memo" />
 		
 	</label>
-	<g:textField name="memo" value="${userInstance?.memo}"/>
+<div class='col-sm-4'>
+	<g:textField class='form-control' name="memo" value="${userInstance?.memo}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'reserve1', 'error')} ">
-	<label for="reserve1">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="reserve1">
 		<g:message code="user.reserve1.label" default="Reserve1" />
 		
 	</label>
-	<g:textArea name="reserve1" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve1}"/>
+<div class='col-sm-4'>
+	<g:textArea class='form-control' name="reserve1" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve1}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'reserve2', 'error')} ">
-	<label for="reserve2">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="reserve2">
 		<g:message code="user.reserve2.label" default="Reserve2" />
 		
 	</label>
-	<g:textArea name="reserve2" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve2}"/>
+<div class='col-sm-4'>
+	<g:textArea class='form-control' name="reserve2" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve2}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'reserve3', 'error')} ">
-	<label for="reserve3">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="reserve3">
 		<g:message code="user.reserve3.label" default="Reserve3" />
 		
 	</label>
-	<g:textArea name="reserve3" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve3}"/>
+<div class='col-sm-4'>
+	<g:textArea class='form-control' name="reserve3" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve3}"/>
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="accountExpired">
 		<g:message code="user.accountExpired.label" default="Account Expired" />
 		
 	</label>
-	<g:checkBox name="accountExpired" value="${userInstance?.accountExpired}" />
+<div class='col-sm-4'>
+	<g:checkBox class='form-control' name="accountExpired" value="${userInstance?.accountExpired}" />
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="accountLocked">
 		<g:message code="user.accountLocked.label" default="Account Locked" />
 		
 	</label>
-	<g:checkBox name="accountLocked" value="${userInstance?.accountLocked}" />
+<div class='col-sm-4'>
+	<g:checkBox class='form-control' name="accountLocked" value="${userInstance?.accountLocked}" />
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'enabled', 'error')} ">
-	<label for="enabled">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="enabled">
 		<g:message code="user.enabled.label" default="Enabled" />
 		
 	</label>
-	<g:checkBox name="enabled" value="${userInstance?.enabled}" />
+<div class='col-sm-4'>
+	<g:checkBox class='form-control' name="enabled" value="${userInstance?.enabled}" />
 
 </div>
+</div>
 
-<div class="fieldcontain ${hasErrors(bean: userInstance, field: 'passwordExpired', 'error')} ">
-	<label for="passwordExpired">
+<div class="form-group ">
+	<label class='control-label col-xs-2' for="passwordExpired">
 		<g:message code="user.passwordExpired.label" default="Password Expired" />
 		
 	</label>
-	<g:checkBox name="passwordExpired" value="${userInstance?.passwordExpired}" />
+<div class='col-sm-4'>
+	<g:checkBox class='form-control' name="passwordExpired" value="${userInstance?.passwordExpired}" />
 
+</div>
 </div>
 
