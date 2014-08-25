@@ -4,55 +4,71 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+        <r:require modules='areaList' />
 		<g:set var="entityName" value="${message(code: 'area.label', default: 'Area')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div id="list-area" class="top10 content scaffold-list" role="main">
+		<div class="top10 row" role="main">
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table class='table table-bordered'>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="code" title="${message(code: 'area.code.label', default: 'Code')}" />
-					
-						<g:sortableColumn property="name" title="${message(code: 'area.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="spell" title="${message(code: 'area.spell.label', default: 'Spell')}" />
-					
-						<g:sortableColumn property="level" title="${message(code: 'area.level.label', default: 'Level')}" />
-					
-						<g:sortableColumn property="reserve1" title="${message(code: 'area.reserve1.label', default: 'Reserve1')}" />
-					
-						<g:sortableColumn property="reserve2" title="${message(code: 'area.reserve2.label', default: 'Reserve2')}" />
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${areaInstanceList}" status="i" var="areaInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${areaInstance.id}">${fieldValue(bean: areaInstance, field: "code")}</g:link></td>
-					
-						<td>${fieldValue(bean: areaInstance, field: "name")}</td>
-					
-						<td>${fieldValue(bean: areaInstance, field: "spell")}</td>
-					
-						<td>${fieldValue(bean: areaInstance, field: "level")}</td>
-					
-						<td>${fieldValue(bean: areaInstance, field: "reserve1")}</td>
-					
-						<td>${fieldValue(bean: areaInstance, field: "reserve2")}</td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${areaInstanceCount ?: 0}" />
-			</div>
+            <table class='display' id='table'>
+                <thead>
+                    <th><g:message code='id.label' /></th>
+                    <th><g:message code='area.code.label' /></th>
+                    <th><g:message code='area.name.label' /></th>
+                    <th><g:message code='area.spell.label' /></th>
+                    <th><g:message code='area.level.label' /></th>
+                    <th><g:message code='area.reserve1.label' /></th>
+                    <th><g:message code='area.reserve2.label' /></th>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <th><g:message code='id.label' /></th>
+                    <th><g:message code='area.code.label' /></th>
+                    <th><g:message code='area.name.label' /></th>
+                    <th><g:message code='area.spell.label' /></th>
+                    <th><g:message code='area.level.label' /></th>
+                    <th><g:message code='area.reserve1.label' /></th>
+                    <th><g:message code='area.reserve2.label' /></th>
+                </tfoot>
+            </table>
 		</div>
+        <g:javascript>
+            var showLink = "${createLink(
+                                controller: 'area',
+                                action: 'show')}";
+            var areasTableLink = "${createLink(
+                                    controller: 'area',
+                                    action: 'getAreasTable')}";
+
+            // define object for DataTable lauguage
+            var dataTableLanguage = {
+                "emptyTable": '<g:message code="dataTable.emptyTable"/>',
+                "info": '<g:message code="dataTable.info"/>',
+                "infoEmpty": '<g:message code="dataTable.infoEmpty"/>',
+                "infoFiltered": '<g:message code="dataTable.infoFiltered"/>',
+                "infoPostFix": '<g:message code="dataTable.infoPostFix"/>',
+                "thousands": '<g:message code="dataTable.thousands"/>',
+                "lengthMenu": '<g:message code="dataTable.lengthMenu"/>',
+                "loadingRecords": '<g:message code="dataTable.loadingRecords"/>',
+                "processing": '<g:message code="dataTable.processing"/>',
+                "search": '<g:message code="dataTable.search"/>',
+                "zeroRecords": '<g:message code="dataTable.zeroRecords"/>',
+                "paginate": {
+                    "first": '<g:message code="dataTable.paginate.first"/>',
+                    "last": '<g:message code="dataTable.paginate.last"/>',
+                    "next": '<g:message code="dataTable.paginate.next"/>',
+                    "previous": '<g:message code="dataTable.paginate.previous"/>'
+                },
+                "aria": {
+                    "sortAscending": 
+                        '<g:message code="dataTable.aria.sortAscending"/>',
+                    "sortDescending": 
+                        '<g:message code="dataTable.aria.sortDescending"/>'
+                }
+            };
+        </g:javascript>
 	</body>
 </html>

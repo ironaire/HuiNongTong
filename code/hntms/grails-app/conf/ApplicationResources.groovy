@@ -33,10 +33,12 @@ modules = {
 
     custom {
         resource url: 'css/styles.css'
+        resource url: 'js/application.js'
     }
 
-    application {
-        resource url:'js/application.js'
+    areaList {
+        dependsOn 'dataTables'
+        resource url:'area/list.js'
     }
 
 }
