@@ -139,6 +139,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/error/*':                       ['permitAll'],
     '/swf/*':                         ['permitAll'],
     '/dbconsole/*':                   ['permitAll'],
-    '/**':                   ['permitAll']
 ]
-
+grails.plugin.springsecurity.logout.postOnly = false

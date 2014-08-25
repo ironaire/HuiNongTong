@@ -1,11 +1,17 @@
 class BootStrap {
 
     def init = { servletContext ->
+
         environments {
             def adminRole =
-            com.xpi.settle.sys.Role.findByAuthority('ROLE_ADMIN') ?:
+                com.xpi.settle.sys.Role.findByAuthority('ROLE_ADMIN') ?:
                 new
                 com.xpi.settle.sys.Role(authority: 'ROLE_ADMIN').
+                    save(flush: true) 
+            def userRole =
+                com.xpi.settle.sys.Role.findByAuthority('ROLE_USER') ?:
+                new
+                com.xpi.settle.sys.Role(authority: 'ROLE_USER').
                     save(flush: true) 
             development {
                 def area = new com.xpi.settle.sys.Area(code: '1', name: '1').
@@ -16,6 +22,10 @@ class BootStrap {
                     password: 'admin', email: 'admin@me.com', 
                     organization: org).save(flush: true) 
                 com.xpi.settle.sys.SecUserSecRole.create admin, adminRole
+                def user = new com.xpi.settle.sys.User(username: 'user',
+                    password: 'user', email: 'user@me.com', 
+                    organization: org).save(flush: true) 
+                com.xpi.settle.sys.SecUserSecRole.create user, userRole
             }
         }
     }

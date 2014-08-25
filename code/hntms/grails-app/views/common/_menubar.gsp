@@ -5,7 +5,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button> <!-- end collapse buttons -->
-        <a class="navbar-brand">
+        <a class="navbar-brand" href="${createLink(uri: '/')}">
             <g:meta name="app.name"/>
         </a>
 
@@ -24,6 +24,7 @@
                             <g:message code="organization.label"/>
                         </a>
                     </li>
+                <sec:ifAnyGranted roles="ROLE_ADMIN">
                     <li>
                         <a href="${createLink(controller: 'user')}">
                             <g:message code="user.label"/>
@@ -35,19 +36,20 @@
                         </a>
                     </li>
 
-                    <sec:ifAnyGranted roles="ROLE_ADMIN">
                         <li>
                         </li>
                         <li>
                         </li>
+                        <!--
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><g:message
                                     code="administration.label"/>
                                 <strong class="caret"></strong>
                             </a>
                             <ul class="dropdown-menu">
-                            </ul> <!-- end dropdown menu -->
-                        </li> <!-- end dropdown li -->
+                            </ul> 
+                        </li>
+                        -->
                     </sec:ifAnyGranted>
                 </ul> <!-- end navbar-nav -->
             <!-- account profile -->
