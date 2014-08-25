@@ -45,7 +45,7 @@ class AreaController {
             }
         }
         
-        def recordsTotal = Area.createCriteria().count()
+        def recordsTotal = Area.createCriteria().count {}
         def areasTable = []
         areas.each { area -> 
             areasTable << [
