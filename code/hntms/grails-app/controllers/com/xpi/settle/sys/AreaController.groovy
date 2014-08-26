@@ -35,13 +35,13 @@ class AreaController {
         def areas = criteria.list(max: maxResults, 
                                 offset: firstResult,
                                 sort: sort,
-                                order: orderDir) {
-            or {
-                ilike('code', "%$filter%")
-                ilike('name', "%$filter%")
-                ilike('spell', "%$filter%")
-                ilike('reserve1', "%$filter%")
-                ilike('reserve2', "%$filter%")
+                                order: orderDir) { 
+            if(filter != '') {
+                or {
+                    ilike('code', "%$filter%")
+                    ilike('name', "%$filter%")
+                    ilike('spell', "%$filter%")
+                }
             }
         }
         
@@ -53,9 +53,7 @@ class AreaController {
                 area.code,
                 area.name,
                 area.spell,
-                area.level,
-                area.reserve1,
-                area.reserve2
+                area.level
             ]
         }
 

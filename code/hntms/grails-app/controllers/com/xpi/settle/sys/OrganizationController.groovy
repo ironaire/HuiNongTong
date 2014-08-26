@@ -1,5 +1,7 @@
 package com.xpi.settle.sys
 
+import grails.converters.JSON
+
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
@@ -14,6 +16,66 @@ class OrganizationController {
         params.max = Math.min(max ?: 10, 100)
         respond Organization.list(params), model:[organizationInstanceCount: Organization.count()]
     }
+
+
+    /**
+     * Retrieve all organization in json format, 
+     * which will be use to render DataTables.
+     * @param max, offset, sort, order
+     * @return DataTables json format
+     */
+     def getOrganizationsTable() {
+        def orderIndex = params."order[0][column]"
+        def index = "columns[" + orderIndex + "][name]"
+        def sort = params."$index" ?: 'id'
+        def orderDir = params."order[0][dir]" ?: 'asc'
+        def firstResult = params.start ?: 0
+        def maxResults = params.length ?: 10
+        def filter = params."search[value]" ?: ''
+        def criteria = Organization.createCriteria()
+        def organizations = criteria.list(max: maxResults, 
+                                offset: firstResult,
+                                sort: sort,
+                                order: orderDir) { 
+            createAlias('area', 'a')
+            if(sort == 'area') {
+                order('a.name', orderDir)
+            }
+            if(filter != '') {
+                or {
+                    ilike('code', "%$filter%")
+                    ilike('name', "%$filter%")
+                    ilike('address', "%$filter%")
+                    ilike('leader', "%$filter%")
+                    ilike('contact', "%$filter%")
+                    ilike('bank', "%$filter%")
+                    ilike('a.name', "%$filter%")
+                    ilike('a.name', "%$filter%")
+                }
+            }
+        }
+        
+        def recordsTotal = Organization.createCriteria().count {}
+        def organizationsTable = []
+        organizations.each { organization -> 
+            organizationsTable << [
+                organization.id,
+                organization.code,
+                organization.name,
+                organization.address,
+                organization.leader,
+                organization.contact,
+                organization.bank,
+                organization.level,
+                organization.area?.name
+            ]
+        }
+
+        def data = ['data': organizationsTable,
+                    'recordsFiltered': organizations.totalCount,
+                    'recordsTotal': recordsTotal]
+        render data as JSON
+     }
 
     def show(Organization organizationInstance) {
         respond organizationInstance

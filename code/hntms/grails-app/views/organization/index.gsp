@@ -4,55 +4,76 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+        <r:require modules='orgList' />
 		<g:set var="entityName" value="${message(code: 'organization.label', default: 'Organization')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div id="list-organization" class="top10 content scaffold-list" role="main">
+		<div class="top10 container-fluid" role="main">
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table class='table table-bordered'>
-			<thead>
-					<tr>
-					
-						<g:sortableColumn property="code" title="${message(code: 'organization.code.label', default: 'Code')}" />
-					
-						<g:sortableColumn property="name" title="${message(code: 'organization.name.label', default: 'Name')}" />
-					
-						<g:sortableColumn property="address" title="${message(code: 'organization.address.label', default: 'Address')}" />
-					
-						<g:sortableColumn property="leader" title="${message(code: 'organization.leader.label', default: 'Leader')}" />
-					
-						<g:sortableColumn property="contact" title="${message(code: 'organization.contact.label', default: 'Contact')}" />
-					
-						<g:sortableColumn property="memo" title="${message(code: 'organization.memo.label', default: 'Memo')}" />
-					
-					</tr>
+			<table class='display' id='table'>
+                <thead>
+                    <th><g:message code='id.label' /></th>
+                    <th><g:message code='organization.code.label' /></th>
+                    <th><g:message code='organization.name.label' /></th>
+                    <th><g:message code='organization.address.label' /></th>
+                    <th><g:message code='organization.leader.label' /></th>
+                    <th><g:message code='organization.contact.label' /></th>
+                    <th><g:message code='organization.bank.label' /></th>
+                    <th><g:message code='organization.level.label' /></th>
+                    <th><g:message code='area.label' /></th>
 				</thead>
 				<tbody>
-				<g:each in="${organizationInstanceList}" status="i" var="organizationInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${organizationInstance.id}">${fieldValue(bean: organizationInstance, field: "code")}</g:link></td>
-					
-						<td>${fieldValue(bean: organizationInstance, field: "name")}</td>
-					
-						<td>${fieldValue(bean: organizationInstance, field: "address")}</td>
-					
-						<td>${fieldValue(bean: organizationInstance, field: "leader")}</td>
-					
-						<td>${fieldValue(bean: organizationInstance, field: "contact")}</td>
-					
-						<td>${fieldValue(bean: organizationInstance, field: "memo")}</td>
-					
-					</tr>
-				</g:each>
 				</tbody>
+                <tfoot>
+                    <th><g:message code='id.label' /></th>
+                    <th><g:message code='organization.code.label' /></th>
+                    <th><g:message code='organization.name.label' /></th>
+                    <th><g:message code='organization.address.label' /></th>
+                    <th><g:message code='organization.leader.label' /></th>
+                    <th><g:message code='organization.contact.label' /></th>
+                    <th><g:message code='organization.bank.label' /></th>
+                    <th><g:message code='organization.level.label' /></th>
+                    <th><g:message code='area.label' /></th>
+				</tfoot>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${organizationInstanceCount ?: 0}" />
-			</div>
 		</div>
+        <g:javascript>
+            var showLink = "${createLink(
+                                controller: 'organization',
+                                action: 'show')}";
+            var organizationsTableLink = "${createLink(
+                                    controller: 'organization',
+                                    action: 'getOrganizationsTable')}";
+
+            // define object for DataTable lauguage
+            var dataTableLanguage = {
+                "emptyTable": '<g:message code="dataTable.emptyTable"/>',
+                "info": '<g:message code="dataTable.info"/>',
+                "infoEmpty": '<g:message code="dataTable.infoEmpty"/>',
+                "infoFiltered": '<g:message code="dataTable.infoFiltered"/>',
+                "infoPostFix": '<g:message code="dataTable.infoPostFix"/>',
+                "thousands": '<g:message code="dataTable.thousands"/>',
+                "lengthMenu": '<g:message code="dataTable.lengthMenu"/>',
+                "loadingRecords": '<g:message code="dataTable.loadingRecords"/>',
+                "processing": '<g:message code="dataTable.processing"/>',
+                "search": '<g:message code="dataTable.search"/>',
+                "zeroRecords": '<g:message code="dataTable.zeroRecords"/>',
+                "paginate": {
+                    "first": '<g:message code="dataTable.paginate.first"/>',
+                    "last": '<g:message code="dataTable.paginate.last"/>',
+                    "next": '<g:message code="dataTable.paginate.next"/>',
+                    "previous": '<g:message code="dataTable.paginate.previous"/>'
+                },
+                "aria": {
+                    "sortAscending": 
+                        '<g:message code="dataTable.aria.sortAscending"/>',
+                    "sortDescending": 
+                        '<g:message code="dataTable.aria.sortDescending"/>'
+                }
+            };
+        </g:javascript>
 	</body>
 </html>

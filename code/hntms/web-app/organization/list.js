@@ -4,7 +4,7 @@ $('#table').DataTable({
         "serverSide": true,
         "paging": true,
         "ajax": {
-            "url": areasTableLink,
+            "url": organizationsTableLink,
             "dataType": "json"
         },
         "columnDefs": [
@@ -19,8 +19,12 @@ $('#table').DataTable({
                     return '<a href="' + showLink + '/' + row[0] + '">' + data + '</a>';
                 }
             },
-            {"targets": 3, "name": "spell"},
-            {"targets": 4, "name": "level", 'searchable': false}
+            {"targets": 3, "name": "address"},
+            {"targets": 4, "name": "leader"},
+            {"targets": 5, "name": "contact"},
+            {"targets": 6, "name": "bank"},
+            {"targets": 7, "name": "level", 'searchable': false},
+            {"targets": 8, "name": "area"}
         ],
         "language": dataTableLanguage
     });

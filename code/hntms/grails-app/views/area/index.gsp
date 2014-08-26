@@ -20,8 +20,6 @@
                     <th><g:message code='area.name.label' /></th>
                     <th><g:message code='area.spell.label' /></th>
                     <th><g:message code='area.level.label' /></th>
-                    <th><g:message code='area.reserve1.label' /></th>
-                    <th><g:message code='area.reserve2.label' /></th>
                 </thead>
                 <tbody></tbody>
                 <tfoot>
@@ -30,8 +28,6 @@
                     <th><g:message code='area.name.label' /></th>
                     <th><g:message code='area.spell.label' /></th>
                     <th><g:message code='area.level.label' /></th>
-                    <th><g:message code='area.reserve1.label' /></th>
-                    <th><g:message code='area.reserve2.label' /></th>
                 </tfoot>
             </table>
 		</div>
