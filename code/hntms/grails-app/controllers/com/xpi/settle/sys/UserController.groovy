@@ -1,5 +1,6 @@
 package com.xpi.settle.sys
 
+import grails.converters.JSON
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
@@ -14,6 +15,63 @@ class UserController {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userInstanceCount: User.count()]
     }
+
+    /**
+     * Retrieve all user in json format, 
+     * which will be use to render DataTables.
+     * @param max, offset, sort, order
+     * @return DataTables json format
+     */
+     def getUsersTable() {
+        def orderIndex = params."order[0][column]"
+        def index = "columns[" + orderIndex + "][name]"
+        def sort = params."$index" ?: 'id'
+        def orderDir = params."order[0][dir]" ?: 'asc'
+        def firstResult = params.start ?: 0
+        def maxResults = params.length ?: 10
+        def filter = params."search[value]" ?: ''
+        def criteria = User.createCriteria()
+        def users = criteria.list(max: maxResults, 
+                                offset: firstResult,
+                                sort: sort,
+                                order: orderDir) { 
+            createAlias('organization', 'o')
+            if(sort == 'organization') {
+                order('o.name', orderDir)
+            }
+            if(filter != '') {
+                or {
+                    ilike('username', "%$filter%")
+                    ilike('email', "%$filter%")
+                    ilike('name', "%$filter%")
+                    ilike('phone', "%$filter%")
+                    ilike('address', "%$filter%")
+                    ilike('idCard', "%$filter%")
+                    ilike('o.name', "%$filter%")
+                }
+            }
+        }
+        
+        def recordsTotal = User.createCriteria().count {}
+        def usersTable = []
+        users.each { user -> 
+            usersTable << [
+                user.id,
+                user.username,
+                user.email,
+                user.name,
+                user.phone,
+                user.address,
+                user.idCard,
+                user.organization?.name
+            ]
+        }
+
+        def data = ['data': usersTable,
+                    'recordsFiltered': users.totalCount,
+                    'recordsTotal': recordsTotal]
+        render data as JSON
+     }
 
     def show(User userInstance) {
         respond userInstance

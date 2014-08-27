@@ -46,4 +46,8 @@ modules = {
         resource url:'organization/list.js'
     }
 
+    userList {
+        dependsOn 'dataTables'
+        resource url:'user/list.js'
+    }
 }
