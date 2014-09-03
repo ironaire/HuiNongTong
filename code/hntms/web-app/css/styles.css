@@ -78,8 +78,16 @@ table {
     margin-top: 10px;
 }
 
-// form-control required style
+/* form-control required style */
 .form-group.required .control-label:after {
     content: "*";
     color: red;
 }
+
+.footer-style {
+    border:dotted 2px black;
+    background-color:Yellow;
+    width:100px;
+    height:100px;
+}
+
