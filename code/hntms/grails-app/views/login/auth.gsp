@@ -8,7 +8,7 @@
 </head>
 <body>
 <section id="login" class="first">
-    <div class="container"  style="background-image:url(../images/login-bgmain.png)">
+    <div class="container" style="background-image:url(../images/login-bgmain.png)">
         <div class="row" >
             <div class="col-md-2"></div>
             <div class="col-md-8" align="middle">
