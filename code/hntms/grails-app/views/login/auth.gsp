@@ -8,22 +8,25 @@
 </head>
 <body>
 <section id="login" class="first">
-    <div class="container" style="background-image:url(../images/login-bgmain.png)">
+    <div class="container login-style">
         <div class="row" >
             <div class="col-md-2"></div>
             <div class="col-md-8" align="middle">
             <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
                <tr><td colspan="2"><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></td></tr>
                <tr>
-                   <td><div align="right"><img src="/tongbaoyi/images/tongbaoyi-logo.png" width="180" height="100"></td>
+                   <td><div align="right"><g:img dir='custom/images'
+                       file="tongbaoyi-logo.png" width="180" height="100"/></td>
                    <td><div align="left">&nbsp;<h2>跨境收单清算管理平台</h2></td>
                </tr>
             </table>
                 <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
                     <tr><td colspan="2"><p>&nbsp;</p></td></tr>
                     <tr>
-                        <td><div align="right"><img src="/tongbaoyi/images/login-bglogin-earth1.png" width="240" height="260"></td>
-                        <td background="/tongbaoyi/images/login-bglogin-earth2.png" width="300">
+                        <td><div align="right"><g:img dir='custom/images'
+                            file="login-bglogin-earth1.png"
+                        width="240" height="260"/></td>
+                        <td class='login-form-style'>
                             <p>&nbsp;</p>
                             <div class="row" >
                                 <form role="form" id='loginForm' class='form-horizontal' action='${postUrl}'
@@ -68,7 +71,9 @@
                                 </form>
                                                             </div>
                         </td>
-                        <td><div align="left"><img src="/tongbaoyi/images/login-bglogin-earth3.png" width="20" height="260"></td>
+                        <td><div align="left"><g:img dir='custom/images'
+                        file="login-bglogin-earth3.png"
+                        width="20" height="260"/></td>
                     </tr>
                 </table>
                 <div class="row" class="container-fluid">

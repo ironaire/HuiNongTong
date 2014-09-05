@@ -32,8 +32,8 @@ modules = {
     }
 
     custom {
-        resource url: 'css/styles.css'
-        resource url: 'js/application.js'
+        resource url: '/custom/css/styles.css'
+        resource url: '/custom/js/application.js'
     }
 
     areaList {

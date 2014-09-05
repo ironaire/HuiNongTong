@@ -1,5 +1,5 @@
 <footer class="navbar navbar-fixed-bottom">
-    <div class="container" style='background-image: url(../images/footer-bg.png)'>
+    <div class="container footer-style">
         <div class="row">
             <div class="col-md-12">
                 <strong><g:meta name="app.name"/></strong>&nbsp;&nbsp;
