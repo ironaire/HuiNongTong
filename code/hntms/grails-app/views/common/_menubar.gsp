@@ -1,3 +1,4 @@
+<g:if test="${!layout_navbar}">
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
@@ -7,7 +8,7 @@
         </button> <!-- end collapse buttons -->
         <a class="navbar-brand" 
             href="${createLink(controller: 'home', action: 'index')}">
-            <g:meta name="app.name"/>
+            <g:message code="app.name"/>
         </a>
 
     <!-- navbar -->
@@ -61,4 +62,4 @@
         </g:if>
     </div> <!-- end container-fluid -->
 </div> <!-- end navbar -->
-
+</g:if>

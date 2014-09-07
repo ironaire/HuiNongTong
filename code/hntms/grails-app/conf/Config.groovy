@@ -43,6 +43,8 @@ grails.resources.adhoc.excludes = ['/WEB-INF/**']
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
+grails.views.gsp.encoding = 'UTF-8'
+grails.views.converters.encoding = 'UTF-8'
 
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.

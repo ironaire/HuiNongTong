@@ -2,7 +2,7 @@
 <head>
     <title><g:message code="springSecurity.login.title"/></title>
     <meta name="layout" content="main"/>
-    <g:set var='layout_nomainmenu' value="${true}" scope='request' />
+    <g:set var='layout_navbar' value="${true}" scope='request' />
     <g:set var='layout_nosecondarymenu' value="${true}" 
         scope='request' />
 </head>

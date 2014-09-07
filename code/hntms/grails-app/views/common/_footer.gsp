@@ -1,11 +1,13 @@
-<footer class="navbar navbar-fixed-bottom">
+<footer class="navbar navbar-fixed-bottom hidden-xs">
     <div class="container footer-style">
         <div class="row">
-            <div class="col-md-12">
-                <strong><g:meta name="app.name"/></strong>&nbsp;&nbsp;
-                <em><g:meta name='app.by' /></em>
+                <strong><g:message code="app.copyright"/></strong>&nbsp;&nbsp;
                 Copyright &copy; <g:formatDate format='yyyy' date="${new Date()}"/>
-            </div>
         </div> <!-- end row -->
+        <div class='row'>
+            <div class='pull-right'>
+                <em><g:message code="app.by"/></em>
+            </div>
+        </div>
     </div> <!-- end container -->
 </footer> <!-- end footer -->
