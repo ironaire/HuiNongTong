@@ -26,6 +26,7 @@ class Organization {
     static constraints = {
         code blank: false, size: 1..32
         name blank: false, size: 1..32
+        area nullable: false
         address nullable: true, size: 1..256
         leader nullable: true, size: 1..32
         contact nullable: true, size: 1..32

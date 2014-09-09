@@ -3,7 +3,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="username">
 		<g:message code="user.username.label" default="Username" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-sm-4'>
 	<g:textField class='form-control' name="username" required="" value="${userInstance?.username}"/>
@@ -14,7 +13,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="password">
 		<g:message code="user.password.label" default="Password" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-sm-4'>
 	<g:textField class='form-control' name="password" required="" value="${userInstance?.password}"/>
@@ -25,7 +23,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="email">
 		<g:message code="user.email.label" default="Email" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-sm-4'>
 	<g:field class='form-control' type="email" name="email" maxlength="32" required="" value="${userInstance?.email}"/>
@@ -69,7 +66,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="organization">
 		<g:message code="user.organization.label" default="Organization" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-sm-4'>
 	<g:select class='form-control' id="organization" name="organization.id" from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${userInstance?.organization?.id}" class="many-to-one"/>
@@ -77,7 +73,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="name">
 		<g:message code="user.name.label" default="Name" />
 		
@@ -88,7 +84,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="idCard">
 		<g:message code="user.idCard.label" default="Id Card" />
 		
@@ -99,7 +95,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="im">
 		<g:message code="user.im.label" default="Im" />
 		
@@ -110,7 +106,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="memo">
 		<g:message code="user.memo.label" default="Memo" />
 		
@@ -121,7 +117,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve1">
 		<g:message code="user.reserve1.label" default="Reserve1" />
 		
@@ -132,7 +128,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve2">
 		<g:message code="user.reserve2.label" default="Reserve2" />
 		
@@ -143,7 +139,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve3">
 		<g:message code="user.reserve3.label" default="Reserve3" />
 		
@@ -154,7 +150,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group required">
 	<label class='control-label col-xs-2' for="accountExpired">
 		<g:message code="user.accountExpired.label" default="Account Expired" />
 		
@@ -165,7 +161,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group required">
 	<label class='control-label col-xs-2' for="accountLocked">
 		<g:message code="user.accountLocked.label" default="Account Locked" />
 		
@@ -176,7 +172,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group required">
 	<label class='control-label col-xs-2' for="enabled">
 		<g:message code="user.enabled.label" default="Enabled" />
 		
@@ -187,7 +183,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group required">
 	<label class='control-label col-xs-2' for="passwordExpired">
 		<g:message code="user.passwordExpired.label" default="Password Expired" />
 		

@@ -1,11 +1,8 @@
 <%@ page import="com.xpi.settle.sys.Organization" %>
 
-
-
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="code">
 		<g:message code="organization.code.label" default="Code" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-xs-4'>
 	<g:textField name="code" maxlength="32" required="" value="${organizationInstance?.code}"/>
@@ -16,7 +13,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="name">
 		<g:message code="organization.name.label" default="Name" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-xs-4'>
 	<g:textField class='form-control' name="name" maxlength="32" required="" value="${organizationInstance?.name}"/>
@@ -24,7 +20,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="address">
 		<g:message code="organization.address.label" default="Address" />
 		
@@ -35,7 +31,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="leader">
 		<g:message code="organization.leader.label" default="Leader" />
 		
@@ -46,7 +42,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="contact">
 		<g:message code="organization.contact.label" default="Contact" />
 		
@@ -57,7 +53,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="memo">
 		<g:message code="organization.memo.label" default="Memo" />
 		
@@ -68,7 +64,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="bank">
 		<g:message code="organization.bank.label" default="Bank" />
 		
@@ -79,7 +75,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="dateUpdated">
 		<g:message code="organization.dateUpdated.label" default="Date Updated" />
 		
@@ -90,7 +86,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve1">
 		<g:message code="organization.reserve1.label" default="Reserve1" />
 		
@@ -101,7 +97,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve2">
 		<g:message code="organization.reserve2.label" default="Reserve2" />
 		
@@ -112,7 +108,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="reserve3">
 		<g:message code="organization.reserve3.label" default="Reserve3" />
 		
@@ -123,7 +119,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="level">
 		<g:message code="organization.level.label" default="Level" />
 		
@@ -137,7 +133,6 @@
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="area">
 		<g:message code="organization.area.label" default="Area" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-xs-4'>
 	<g:select class='form-control' id="area" name="area.id" from="${com.xpi.settle.sys.Area.list()}" optionKey="id" required="" value="${organizationInstance?.area?.id}" class="many-to-one"/>
@@ -145,7 +140,7 @@
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="children">
 		<g:message code="organization.children.label" default="Children" />
 		
@@ -165,18 +160,21 @@
 </div>
 </div>
 
-<div class="form-group required">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="parent">
 		<g:message code="organization.parent.label" default="Parent" />
-		<span class="required-indicator">*</span>
 	</label>
 <div class='col-xs-4'>
-	<g:select class='form-control' id="parent" name="parent.id" from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${organizationInstance?.parent?.id}" class="many-to-one"/>
+	<g:select class='form-control' id="parent" name="parent.id" 
+    from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" 
+    optionValue='name'
+    noSelection="${['': message(code: 'select.no.label')]}" 
+    value="${organizationInstance?.parent?.id}" class="many-to-one"/>
 
 </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
 	<label class='control-label col-xs-2' for="users">
 		<g:message code="organization.users.label" default="Users" />
 		
