@@ -8,7 +8,7 @@
         </title>
 	</head>
 	<body>
-        <div class='container col-md-12'>
+        <div class=''>
             <!-- BEGIN PAGE TITLE & BREADCRUMB-->
             <ul class="breadcrumb">
                 <li>
@@ -20,13 +20,13 @@
             </ul>
             <!-- END PAGE TITLE & BREADCRUMB-->
         </div>
-    <div class="container col-md-12">
+    <div class="">
         <!-- BEGIN SAMPLE TABLE PORTLET-->
         <div class="col-md-6">
-            <div class="bg-info panel-heading">
+            <div class="bg-info panel-heading  table-bordered">
                 &nbsp; <i class="glyphicon glyphicon-list-alt"></i>&nbsp; Simple Table
             </div>
-            <div class="portlet-body">
+            <div class="portlet-body  table-bordered">
                 <table class="table table-hover">
                     <thead>
                     <tr>

@@ -9,7 +9,7 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-    <div class='container col-md-12'>
+    <div class=''>
         <!-- BEGIN PAGE TITLE & BREADCRUMB-->
         <ul class="breadcrumb">
             <li>
