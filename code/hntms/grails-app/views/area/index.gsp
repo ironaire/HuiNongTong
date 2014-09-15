@@ -9,22 +9,6 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-    <div class=''>
-        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-        <ul class="breadcrumb">
-            <li>
-                &nbsp;
-                <i class="glyphicon glyphicon-home"></i>
-                &nbsp;
-                <a href="index.gsp">Home</a>
-                &nbsp;
-                <i class="glyphicon glyphicon-chevron-right"></i>
-                &nbsp;
-                <a href="index.gsp">SubMenu~~~~</a>
-            </li>
-        </ul>
-        <!-- END PAGE TITLE & BREADCRUMB-->
-    </div>
 
 		<div class="container col-md-12 table-bordered top10" role="main">
 			<g:if test="${flash.message}">
@@ -37,21 +21,19 @@
                     <th><g:message code='area.name.label' /></th>
                     <th><g:message code='area.spell.label' /></th>
                     <th><g:message code='area.level.label' /></th>
+                    <th><g:message code='operation.label' /></th>
                 </thead>
                 <tbody></tbody>
-                <tfoot>
-                    <th><g:message code='id.label' /></th>
-                    <th><g:message code='area.code.label' /></th>
-                    <th><g:message code='area.name.label' /></th>
-                    <th><g:message code='area.spell.label' /></th>
-                    <th><g:message code='area.level.label' /></th>
-                </tfoot>
             </table>
 		</div>
         <g:javascript>
             var showLink = "${createLink(
                                 controller: 'area',
                                 action: 'show')}";
+            var editLink = "${createLink(
+                                controller: 'area',
+                                action: 'edit')}";
+            var editLabel = "${message(code: 'edit.label')}";
             var areasTableLink = "${createLink(
                                     controller: 'area',
                                     action: 'getAreasTable')}";

@@ -24,7 +24,13 @@ $('#table').DataTable({
             {"targets": 5, "name": "contact"},
             {"targets": 6, "name": "bank"},
             {"targets": 7, "name": "level", 'searchable': false},
-            {"targets": 8, "name": "area"}
+            {"targets": 8, "name": "area"},
+            {"targets": 9, "name": "operation",
+                'searchable': false, 'orderable': false,
+                "render": function(data, type, row) {
+                    return '<a href="' + editLink + '/' + row[0] + '">' + editLabel + '</a>';
+                }
+            },
         ],
         "language": dataTableLanguage
     });

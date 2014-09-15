@@ -8,18 +8,6 @@
         </title>
 	</head>
 	<body>
-        <div class=''>
-            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-            <ul class="breadcrumb">
-                <li>
-                    &nbsp;
-                    <i class="glyphicon glyphicon-home"></i>
-                    &nbsp;
-                    <a href="index.gsp">Home</a>
-                </li>
-            </ul>
-            <!-- END PAGE TITLE & BREADCRUMB-->
-        </div>
     <div class="">
         <!-- BEGIN SAMPLE TABLE PORTLET-->
         <div class="col-md-6">

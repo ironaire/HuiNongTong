@@ -24,26 +24,20 @@
                     <th><g:message code='organization.bank.label' /></th>
                     <th><g:message code='organization.level.label' /></th>
                     <th><g:message code='area.label' /></th>
+                    <th><g:message code='operation.label' /></th>
 				</thead>
 				<tbody>
 				</tbody>
-                <tfoot>
-                    <th><g:message code='id.label' /></th>
-                    <th><g:message code='organization.code.label' /></th>
-                    <th><g:message code='organization.name.label' /></th>
-                    <th><g:message code='organization.address.label' /></th>
-                    <th><g:message code='organization.leader.label' /></th>
-                    <th><g:message code='organization.contact.label' /></th>
-                    <th><g:message code='organization.bank.label' /></th>
-                    <th><g:message code='organization.level.label' /></th>
-                    <th><g:message code='area.label' /></th>
-				</tfoot>
 			</table>
 		</div>
         <g:javascript>
             var showLink = "${createLink(
                                 controller: 'organization',
                                 action: 'show')}";
+            var editLink = "${createLink(
+                                controller: 'organization',
+                                action: 'edit')}";
+            var editLabel = "${message(code: 'edit.label')}";
             var organizationsTableLink = "${createLink(
                                     controller: 'organization',
                                     action: 'getOrganizationsTable')}";

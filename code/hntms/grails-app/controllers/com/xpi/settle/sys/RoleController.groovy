@@ -1,6 +1,8 @@
 package com.xpi.settle.sys
 
 import static org.springframework.http.HttpStatus.*
+
+import grails.converters.JSON
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -15,6 +17,46 @@ class RoleController {
         respond Role.list(params), model:[roleInstanceCount: Role.count()]
     }
 
+    /**
+     * Retrieve all role in json format, 
+     * which will be use to render DataTables.
+     * @param max, offset, sort, order
+     * @return DataTables json format
+     */
+     def getRolesTable() {
+        def orderIndex = params."order[0][column]"
+        def index = "columns[" + orderIndex + "][name]"
+        def sort = params."$index" ?: 'id'
+        def orderDir = params."order[0][dir]" ?: 'asc'
+        def firstResult = params.start ?: 0
+        def maxResults = params.length ?: 10
+        def filter = params."search[value]" ?: ''
+        def criteria = Role.createCriteria()
+        def roles = criteria.list(max: maxResults, 
+                                offset: firstResult,
+                                sort: sort,
+                                order: orderDir) { 
+            if(filter != '') {
+                or {
+                    ilike('authority', "%$filter%")
+                }
+            }
+        }
+        
+        def recordsTotal = Role.createCriteria().count {}
+        def rolesTable = []
+        roles.each { role -> 
+            rolesTable << [
+                role.id,
+                role.authority
+            ]
+        }
+
+        def data = ['data': rolesTable,
+                    'recordsFiltered': roles.totalCount,
+                    'recordsTotal': recordsTotal]
+        render data as JSON
+     }
     def show(Role roleInstance) {
         respond roleInstance
     }

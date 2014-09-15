@@ -50,4 +50,9 @@ modules = {
         dependsOn 'dataTables'
         resource url:'user/list.js'
     }
+
+    roleList {
+        dependsOn 'dataTables'
+        resource url:'role/list.js'
+    }
 }

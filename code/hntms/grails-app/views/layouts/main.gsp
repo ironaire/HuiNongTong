@@ -16,6 +16,7 @@
 <body>
 <div id="main" class="container">
     <g:render template="/common/menubar"/>
+    <g:render template="/common/navbar"/>
     <g:render template="/common/submenubar"/>
     <g:layoutBody/>
     <g:render template="/common/footer"/>

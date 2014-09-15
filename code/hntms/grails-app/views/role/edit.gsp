@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+        <g:set var='layout_nosecondarymenu' value="${true}" scope='request' />
 		<g:set var="entityName" value="${message(code: 'role.label', default: 'Role')}" />
 		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>

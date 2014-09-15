@@ -23,25 +23,20 @@
                     <th><g:message code='user.phone.label' /></th>
                     <th><g:message code='user.idCard.label' /></th>
                     <th><g:message code='organization.label' /></th>
+                    <th><g:message code='operation.label' /></th>
 				</thead>
 				<tbody>
 				</tbody>
-                <tfoot>
-                    <th><g:message code='id.label' /></th>
-                    <th><g:message code='user.username.label' /></th>
-                    <th><g:message code='user.email.label' /></th>
-                    <th><g:message code='user.name.label' /></th>
-                    <th><g:message code='user.address.label' /></th>
-                    <th><g:message code='user.phone.label' /></th>
-                    <th><g:message code='user.idCard.label' /></th>
-                    <th><g:message code='organization.label' /></th>
-                </tfoot>
 			</table>
 		</div>
         <g:javascript>
             var showLink = "${createLink(
                                 controller: 'user',
                                 action: 'show')}";
+            var editLink = "${createLink(
+                                controller: 'user',
+                                action: 'edit')}";
+            var editLabel = "${message(code: 'edit.label')}";
             var usersTableLink = "${createLink(
                                     controller: 'user',
                                     action: 'getUsersTable')}";

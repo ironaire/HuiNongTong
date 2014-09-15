@@ -4,6 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+        <g:set var='layout_nosecondarymenu' value="${true}" scope='request' />
 		<g:set var="entityName" value="${message(code: 'organization.label', default: 'Organization')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
