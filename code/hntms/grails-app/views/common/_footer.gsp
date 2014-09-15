@@ -1,12 +1,14 @@
 <footer class="navbar navbar-fixed-bottom hidden-xs">
     <div class="container footer-style">
         <div class="row">
-                <strong><g:message code="app.copyright"/></strong>&nbsp;&nbsp;
-                Copyright &copy; <g:formatDate format='yyyy' date="${new Date()}"/>
+                <h5><strong><g:message code="app.copyright"/></strong>&nbsp;&nbsp;
+                Copyright &copy; <g:formatDate format='yyyy' date="${new Date()}"/></h5>
         </div> <!-- end row -->
         <div class='row'>
             <div class='pull-right'>
-                <em><g:message code="app.by"/></em>
+                <g:img dir='custom/images'
+                       file="kingbar-logo.png"
+                       width="150" height="20"/>
             </div>
         </div>
     </div> <!-- end container -->

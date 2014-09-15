@@ -3,23 +3,24 @@
     <title><g:message code="springSecurity.login.title"/></title>
     <meta name="layout" content="main"/>
     <g:set var='layout_navbar' value="${true}" scope='request' />
-    <g:set var='layout_nosecondarymenu' value="${true}" 
-        scope='request' />
+    <g:set var='layout_nosecondarymenu' value="${true}" scope='request' />
+    <g:set var='layout_nofooter' value="${true}" scope='request' />
+
 </head>
 <body>
 <section id="login" class="first">
-    <div class="container login-style">
+    <div class="container col-md-12 login-style">
         <div class="row" >
             <div class="col-md-2"></div>
             <div class="col-md-8" align="middle">
-            <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
-               <tr><td colspan="2"><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></td></tr>
-               <tr>
-                   <td><div align="right"><g:img dir='custom/images'
-                       file="tongbaoyi-logo.png" width="180" height="100"/></td>
-                   <td><div align="left">&nbsp;<h2>跨境收单清算管理平台</h2></td>
-               </tr>
-            </table>
+                <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
+                   <tr><td colspan="2"><p>&nbsp;</p><p>&nbsp;</p></td></tr>
+                   <tr>
+                       <td><div align="right"><g:img dir='custom/images'
+                           file="tongbaoyi-logo.png" width="180" height="100"/></div></td>
+                       <td><div align="left">&nbsp;<h2>跨境收单清算管理平台</h2></div></td>
+                   </tr>
+                </table>
                 <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
                     <tr><td colspan="2"><p>&nbsp;</p></td></tr>
                     <tr>
@@ -36,36 +37,29 @@
                                             <g:message code="user.username.label" default="Username"/>
                                         </label>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-7">
                                             <g:field type="input" class="form-control" name="j_username" id="username" placeholder="Username" value="${userInstance?.username}" required="true"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password" class="col-sm-3 control-label">
+                                        <label for="password" class="col-md-3 control-label">
                                             <g:message code="user.password.label" default="Password"/>
                                         </label>
 
-                                        <div class="col-sm-6">
+                                        <div class="col-md-7">
                                             <g:field type="password" class="form-control" name="j_password" id="password" placeholder="Password" required="true"/>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <g:checkBox name="${rememberMeParameter}" value="${hasCookie}"/> <g:message
-                                                            code="user.rememberMe.label" default="Remember Me"/>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input type="submit" id="submit" class="btn btn-primary col-sm-8 col-sm-offset-2"
+                                        <div class="col-md-10">
+                                            <label for="username" class="col-md-1 control-label"></label>
+                                            <input type="submit" id="submit" class="btn btn-primary col-md-4"
                                                    value='${message(code: "login.button.label")}'/>
+                                             <label for="username" class="col-md-1 control-label"></label>
+                                            <input type="reset" id="reset" class="btn btn-primary col-md-4"
+                                                   value='${message(code: "default.button.reset.label")}'/>
                                         </div>
                                     </div>
                                 </form>
@@ -78,7 +72,7 @@
                 </table>
                 <div class="row" class="container-fluid">
                     <table style="width=100%;color:#FFFFFF;border=0;cellpadding=0;cellspacing=0">
-                        <tr height="60"><td>
+                        <tr height="120"><td>
                         <g:if test="${flash.message}">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -98,7 +92,7 @@
                 </div>
             </div>
             <div class="col-md-2"></div>
-        </div>
+    </div>
     </div>
 </section>
 

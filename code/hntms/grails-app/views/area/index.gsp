@@ -9,12 +9,29 @@
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div class="container-fluid top10" role="main">
+    <div class='container col-md-12'>
+        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <ul class="breadcrumb">
+            <li>
+                &nbsp;
+                <i class="glyphicon glyphicon-home"></i>
+                &nbsp;
+                <a href="index.gsp">Home</a>
+                &nbsp;
+                <i class="glyphicon glyphicon-chevron-right"></i>
+                &nbsp;
+                <a href="index.gsp">SubMenu~~~~</a>
+            </li>
+        </ul>
+        <!-- END PAGE TITLE & BREADCRUMB-->
+    </div>
+
+		<div class="container col-md-12 table-bordered top10" role="main">
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
             <table class='display' id='table'>
-                <thead>
+                <thead class="bg-info">
                     <th><g:message code='id.label' /></th>
                     <th><g:message code='area.code.label' /></th>
                     <th><g:message code='area.name.label' /></th>

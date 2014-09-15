@@ -85,9 +85,7 @@ table {
 }
 
 .footer-style {
-    border:dotted 2px black;
-    width:100px;
-    height:40px;
+    height:60px;
     background: url("../images/footer-bg.png");
 }
 
@@ -100,3 +98,8 @@ table {
     width: 300px;
 }
 
+.top-style {
+    background: url("../images/top-bg.png");
+    height: 80px;
+    color:#FFFFFF;
+}

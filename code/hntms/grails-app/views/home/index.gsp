@@ -8,16 +8,176 @@
         </title>
 	</head>
 	<body>
-		<div id="page-body" role="main">
-			<h1>
-                <g:message code='index.title'
-                    args='["${message(code: 'app.name')}"]' />
-            </h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+        <div class='container col-md-12'>
+            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+            <ul class="breadcrumb">
+                <li>
+                    &nbsp;
+                    <i class="glyphicon glyphicon-home"></i>
+                    &nbsp;
+                    <a href="index.gsp">Home</a>
+                </li>
+            </ul>
+            <!-- END PAGE TITLE & BREADCRUMB-->
+        </div>
+    <div class="container col-md-12">
+        <!-- BEGIN SAMPLE TABLE PORTLET-->
+        <div class="col-md-6">
+            <div class="bg-info panel-heading">
+                &nbsp; <i class="glyphicon glyphicon-list-alt"></i>&nbsp; Simple Table
+            </div>
+            <div class="portlet-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th class="hidden-480">Username</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td class="hidden-480">makr124</td>
+                        <td><span class="label label-success">Approved</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Nilson</td>
+                        <td class="hidden-480">jac123</td>
+                        <td><span class="label label-info">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Larry</td>
+                        <td>Cooper</td>
+                        <td class="hidden-480">lar</td>
+                        <td><span class="label label-warning">Suspended</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
+        <div class="col-md-6">
+            <div class="portlet-head">
+                <div class="bg-info">&nbsp; <i class="glyphicon glyphicon-list-alt"></i>&nbsp; Simple Table</div>
+            </div>
+            <div class="portlet-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th class="hidden-480">Username</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td class="hidden-480">makr124</td>
+                        <td><span class="label label-success">Approved</span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Nilson</td>
+                        <td class="hidden-480">jac123</td>
+                        <td><span class="label label-info">Pending</span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Larry</td>
+                        <td>Cooper</td>
+                        <td class="hidden-480">lar</td>
+                        <td><span class="label label-warning">Suspended</span></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Sandy</td>
+                        <td>Lim</td>
+                        <td class="hidden-480">sanlim</td>
+                        <td><span class="label label-danger">Blocked</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END SAMPLE TABLE PORTLET-->
 
-		</div>
-	</body>
+
+    </div>
+    </body>
 </html>
