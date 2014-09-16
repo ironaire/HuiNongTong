@@ -83,7 +83,7 @@
 					
 						<td>
                             <g:link controller='area' action='show'
-                                id="${areaInstance?.parent?.id}">
+                                id="${areaInstance?.parent?.name}">
                                 ${areaInstance?.parent?.encodeAsHTML()}
                             </g:link>
                         </td>
@@ -96,7 +96,8 @@
 					<td><g:message code="area.children.label" default="Children" /></td>
 					
 						<g:each in="${areaInstance.children}" var="c">
-						<td><g:link controller='area' action='show' id="${c?.id}">
+						<td><g:link controller='area' action='show'
+                        id="${c?.id}">
                             ${c?.encodeAsHTML()}
                             </g:link></td>
 						</g:each>

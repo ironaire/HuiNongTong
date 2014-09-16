@@ -61,7 +61,7 @@
 			
 				<g:if test="${organizationInstance?.dateCreated}">
 				<tr>
-					<td><g:message code="organization.dateCreated.label" default="Date Created" /></td>
+					<td><g:message code="dateCreated.label" default="Date Created" /></td>
 					
 						<td><g:formatDate date="${organizationInstance?.dateCreated}" /></td>
 					
@@ -70,7 +70,7 @@
 			
 				<g:if test="${organizationInstance?.dateUpdated}">
 				<tr>
-					<td><g:message code="organization.dateUpdated.label" default="Date Updated" /></td>
+					<td><g:message code="dateUpdated.label" default="Date Updated" /></td>
 					
 						<td><g:formatDate date="${organizationInstance?.dateUpdated}" /></td>
 					
@@ -115,7 +115,7 @@
 			
 				<g:if test="${organizationInstance?.area}">
 				<tr>
-					<td><g:message code="organization.area.label" default="Area" /></td>
+					<td><g:message code="area.label" default="Area" /></td>
 					
 						<td><g:link controller="area" action="show" id="${organizationInstance?.area?.id}">${organizationInstance?.area?.encodeAsHTML()}</g:link></td>
 					

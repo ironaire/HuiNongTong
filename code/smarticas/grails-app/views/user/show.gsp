@@ -23,15 +23,6 @@
 				</tr>
 				</g:if>
 			
-				<g:if test="${userInstance?.password}">
-				<tr>
-					<td><g:message code="user.password.label" default="Password" /></td>
-					
-						<td><g:fieldValue bean="${userInstance}" field="password"/></td>
-					
-				</tr>
-				</g:if>
-			
 				<g:if test="${userInstance?.email}">
 				<tr>
 					<td><g:message code="user.email.label" default="Email" /></td>
@@ -61,7 +52,7 @@
 			
 				<g:if test="${userInstance?.dateCreated}">
 				<tr>
-					<td><g:message code="user.dateCreated.label" default="Date Created" /></td>
+					<td><g:message code="dateCreated.label" default="Date Created" /></td>
 					
 						<td><g:formatDate date="${userInstance?.dateCreated}" /></td>
 					
@@ -70,7 +61,7 @@
 			
 				<g:if test="${userInstance?.dateUpdated}">
 				<tr>
-					<td><g:message code="user.dateUpdated.label" default="Date Updated" /></td>
+					<td><g:message code="dateUpdated.label" default="Date Updated" /></td>
 					
 						<td><g:formatDate date="${userInstance?.dateUpdated}" /></td>
 					
@@ -79,7 +70,7 @@
 			
 				<g:if test="${userInstance?.organization}">
 				<tr>
-					<td><g:message code="user.organization.label" default="Organization" /></td>
+					<td><g:message code="organization.label" default="Organization" /></td>
 					
 						<td><g:link controller="organization" action="show" id="${userInstance?.organization?.id}">${userInstance?.organization?.encodeAsHTML()}</g:link></td>
 					

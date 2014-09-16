@@ -88,12 +88,20 @@ class UserController {
             return
         }
 
+        // get role of the user
+        def role = Role.get(params.role)
+        if(role == null) {
+            notFound()
+            return
+        }
+
         if (userInstance.hasErrors()) {
             respond userInstance.errors, view:'create'
             return
         }
 
         userInstance.save flush:true
+        SecUserSecRole.create userInstance, role
 
         request.withFormat {
             form multipartForm {

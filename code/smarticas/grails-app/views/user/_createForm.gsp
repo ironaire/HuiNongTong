@@ -5,8 +5,18 @@
 		<g:message code="user.username.label" default="Username" />
 	</label>
 <div class='col-sm-4'>
-	<g:textField class='form-control' name="username" required="" value="${userInstance?.username}"
-        disabled='disabled'/>
+	<g:textField class='form-control' name="username" required=""
+        value="${userInstance?.username}" />
+
+</div>
+</div>
+
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="password">
+		<g:message code="user.password.label" default="Password" />
+	</label>
+<div class='col-sm-4'>
+	<g:passwordField class='form-control' name="password" required="" />
 
 </div>
 </div>
@@ -48,7 +58,8 @@
 		<g:message code="organization.label" default="Organization" />
 	</label>
 <div class='col-sm-4'>
-	<g:select class='form-control' id="organization" name="organization.id" from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${userInstance?.organization?.id}" class="many-to-one"/>
+	<g:select class='form-control' id="organization" name="organization.id"
+    from="${com.xpi.settle.sys.Organization.list()}" optionKey="id" required="" value="${userInstance?.organization?.id}" class="many-to-one"/>
 
 </div>
 </div>
@@ -126,6 +137,18 @@
 	</label>
 <div class='col-sm-4'>
 	<g:textArea class='form-control' name="reserve3" cols="40" rows="5" maxlength="256" value="${userInstance?.reserve3}"/>
+
+</div>
+</div>
+
+<div class="form-group required">
+	<label class='control-label col-xs-2' for="role">
+		<g:message code="role.label" />
+	</label>
+<div class='col-sm-4'>
+	<g:select class='form-control' id="role" name="role"
+    from="${com.xpi.settle.sys.Role.list()}" optionKey="id" required=""
+    value="${role?.id}" class="many-to-one"/>
 
 </div>
 </div>

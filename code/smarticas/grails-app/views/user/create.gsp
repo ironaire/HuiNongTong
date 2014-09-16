@@ -20,7 +20,7 @@
 			</g:hasErrors>
 			<g:form url="[resource:userInstance, action:'save']" 
                 class='form-horizontal'>
-                <g:render template="form"/>
+                <g:render template="createForm"/>
 				<div class="form-group">
                     <div class='col-xs-2 col-xs-offset-4'>
 					<g:submitButton name="create" class="btn btn-primary"
