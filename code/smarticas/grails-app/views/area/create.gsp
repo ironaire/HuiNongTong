@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-        <g:set var='layout_nosecondarymenu' value="${true}" scope='request' />
 		<g:set var="entityName" value="${message(code: 'area.label', default: 'Area')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div id="create-area" class="top10 row">
+		<div id="create-area" class="container col-md-12 table-bordered top10">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

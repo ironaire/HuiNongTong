@@ -1,36 +1,50 @@
 <%@ page import="com.xpi.settle.sys.Area" %>
-<div class='form-group required'>
-	<label class='control-label col-xs-2' for="code">
-		<g:message code="area.code.label" default="Code" />
-	</label>
-<div class='col-xs-4'>
-	<g:textField class='form-control' name="code" maxlength="32" required="" value="${areaInstance?.code}"/>
 
-</div>
-</div>
+<div class="table">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>
+                    <div class='form-group required'>
+                        <label class='control-label col-xs-2' for="code">
+                            <g:message code="area.code.label" default="Code" />
+                        </label>
+                    <div class='col-xs-4'>
+                        <g:textField class='form-control' name="code" maxlength="32" required="" value="${areaInstance?.code}"/>
 
-<div class='form-group required'>
-	<label class='control-label col-xs-2' for="name">
-		<g:message code="area.name.label" default="Name" />
-	</label>
-<div class='col-xs-4'>
-	<g:textArea class='form-control' name="name" cols="40" rows="5" maxlength="256" required="" value="${areaInstance?.name}"/>
+                    </div>
+                    </div>
 
-</div>
-</div>
+                    <div class='form-group required'>
+                        <label class='control-label col-xs-2' for="name">
+                            <g:message code="area.name.label" default="Name" />
+                        </label>
+                    <div class='col-xs-4'>
+                        <g:textField class='form-control' name="name" maxlength="32" required="" value="${areaInstance?.name}"/>
 
-<div class='form-group'>
+                    </div>
+                    </div>
+            </td>
+        </tr>
+
+        <tr><td>
+
+            <div class='form-group'>
 	<label class='control-label col-xs-2' for="spell">
 		<g:message code="area.spell.label" default="Spell" />
 		
 	</label>
-<div class='col-xs-4'>
-	<g:textArea class='form-control' name="spell" cols="40" rows="5" maxlength="256" value="${areaInstance?.spell}"/>
+<div class='col-xs-8'>
+	<g:textArea class='form-control' name="spell" cols="40" rows="3" maxlength="256" value="${areaInstance?.spell}"/>
 
 </div>
 </div>
 
-<div class='form-group'>
+        </tr></td>
+        <tr><td>
+
+
+            <div class='form-group'>
 	<label class='control-label col-xs-2' for="level">
 		<g:message code="area.level.label" default="Level" />
 		
@@ -40,6 +54,9 @@
 
 </div>
 </div>
+
+        </tr></td>
+        <tr><td>
 
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="reserve1">
@@ -52,6 +69,9 @@
 </div>
 </div>
 
+        </tr></td>
+        <tr><td>
+
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="reserve2">
 		<g:message code="area.reserve2.label" default="Reserve2" />
@@ -63,6 +83,9 @@
 </div>
 </div>
 
+        </tr></td>
+        <tr><td>
+
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="reserve3">
 		<g:message code="area.reserve3.label" default="Reserve3" />
@@ -73,6 +96,9 @@
 
 </div>
 </div>
+
+        </tr></td>
+        <tr><td>
 
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="parent">
@@ -87,6 +113,9 @@
 
 </div>
 </div>
+
+        </tr></td>
+        <tr><td>
 
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="children">
@@ -108,6 +137,9 @@
 </div>
 </div>
 
+        </tr></td>
+        <tr><td>
+
 <div class='form-group'>
 	<label class='control-label col-xs-2' for="organizations">
 		<g:message code="area.organizations.label" default="Organizations" />
@@ -126,5 +158,10 @@
 
 
 </div>
+</div>
+
+            </tr>
+        </thead>
+    </table>
 </div>
 

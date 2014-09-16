@@ -6,7 +6,7 @@ This menu is used to show function that can be triggered on the content (an obje
 <g:if
         test="${!layout_nosecondarymenu && params.controller != null && params.controller != '' && params.controller !=
                 'home'}">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills table-bordered">
 
         <g:set var="entityName"
                value="${message(code: params.controller + '.label')}"/>

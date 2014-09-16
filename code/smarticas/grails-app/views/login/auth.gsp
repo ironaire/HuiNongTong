@@ -18,7 +18,7 @@
                    <tr><td colspan="2"><p>&nbsp;</p><p>&nbsp;</p></td></tr>
                    <tr>
                        <td><div align="right"><g:img dir='custom/images'
-                           file="tongbaoyi-logo.png" width="180" height="100"/></div></td>
+                           file="tongbaoyi-logo.png" width="180" height="80"/></div></td>
                        <td><div align="left">&nbsp;<h2>跨境收单清算管理平台</h2></div></td>
                    </tr>
                 </table>

@@ -10,12 +10,13 @@
 	</head>
 	<body>
 
-		<div class="container col-md-12 table-bordered top10" role="main">
+		<div class="container col-md-12 top10 table-bordered" style="" role="main">
+            <div>&nbsp;</div>
 			<g:if test="${flash.message}">
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
             <table class='display' id='table'>
-                <thead class="bg-info">
+                <thead class="info">
                     <th><g:message code='id.label' /></th>
                     <th><g:message code='area.code.label' /></th>
                     <th><g:message code='area.name.label' /></th>
@@ -25,7 +26,10 @@
                 </thead>
                 <tbody></tbody>
             </table>
+            <div>&nbsp;</div>
 		</div>
+        <div>&nbsp;</div>
+
         <g:javascript>
             var showLink = "${createLink(
                                 controller: 'area',
