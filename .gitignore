@@ -33,7 +33,7 @@
 **/*.iws
 **/*.iml
 **/*.ipr
-.idea
+**/.idea
 
 # .DS_Store mac file
 **/.DS_Store
