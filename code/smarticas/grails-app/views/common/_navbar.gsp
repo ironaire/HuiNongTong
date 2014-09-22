@@ -11,42 +11,35 @@
                 &nbsp;
                     <g:message code='default.current.label' />
                 &nbsp;
-                <a href="${createLink(controller: 'home', action: 'index')}">
-                    <g:message code='default.home.label' />
-                </a>
                 <g:if test="${params.controller != 'home'}">
+                    <g:if test="${params.controller == 'area' || 
+                        params.controller == 'organization' ||
+                        params.controller == 'user' ||
+                        params.controller == 'role'
+                        }">
+                        <g:message code='system.admin.label' />
+                    </g:if>
                     &nbsp;
                     /
                     &nbsp;
-                    <a href="${createLink(controller: params.controller, action: 'index')}">
-                        <g:message code="${entityAdminName}" />
-                    </a>
+                    <g:message code="${entityAdminName}" />
                     <g:if test="${params.action == 'create'}">
                         &nbsp;
                         /
                         &nbsp;
-                        <a href='#'>
-                        <g:message code="default.new.label" 
-                            args='[entityName]' />
-                        </a>
+                        <g:message code="default.new.label" args='[entityName]' />
                     </g:if>
                     <g:elseif test="${params.action == 'show'}">
                         &nbsp;
                         /
                         &nbsp;
-                        <a href='#'>
-                        <g:message code="default.show.label" 
-                            args='[entityName]' />
-                        </a>
+                        <g:message code="default.show.label" args='[entityName]' />
                     </g:elseif>
                     <g:elseif test="${params.action == 'edit'}">
                         &nbsp;
                         /
                         &nbsp;
-                        <a href='#'>
-                        <g:message code="default.edit.label" 
-                            args='[entityName]' />
-                        </a>
+                        <g:message code="default.edit.label" args='[entityName]' />
                     </g:elseif>
                 </g:if>
             </li>
