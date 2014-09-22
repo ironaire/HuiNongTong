@@ -25,7 +25,8 @@
                 </g:link>
             </li>
         </ul>
-			<g:form controller='home' action='updateProfile' class='form-horizontal'>
+			<g:form controller='home' action='updateProfile'
+                class='form-horizontal top10'>
 				<g:hiddenField name="versionValue"
                     value="${cmdInstance?.versionValue}" />
 				<g:hiddenField name="idValue"

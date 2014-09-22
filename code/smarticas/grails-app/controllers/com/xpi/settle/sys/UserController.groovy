@@ -11,6 +11,8 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    def springSecurityService
+
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond User.list(params), model:[userInstanceCount: User.count()]
@@ -23,6 +25,9 @@ class UserController {
      * @return DataTables json format
      */
      def getUsersTable() {
+
+        def principal = springSecurityService.principal
+
         def orderIndex = params."order[0][column]"
         def index = "columns[" + orderIndex + "][name]"
         def sort = params."$index" ?: 'id'
@@ -35,6 +40,7 @@ class UserController {
                                 offset: firstResult,
                                 sort: sort,
                                 order: orderDir) { 
+            ne('id', principal.id)
             createAlias('organization', 'o')
             if(sort == 'organization') {
                 order('o.name', orderDir)
