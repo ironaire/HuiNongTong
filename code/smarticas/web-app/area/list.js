@@ -19,7 +19,7 @@ $('#table').DataTable({
                     return '<a href="' + showLink + '/' + row[0] + '">' + data + '</a>';
                 }
             },
-            {"targets": 3, "name": "spell"},
+            {"targets": 3, "name": "name"},
             {"targets": 4, "name": "level", 'searchable': false},
             {"targets": 5, "name": "operation",
                 'searchable': false, 'orderable': false,
