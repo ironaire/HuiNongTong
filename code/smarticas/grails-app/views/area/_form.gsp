@@ -1,8 +1,7 @@
 <%@ page import="com.xpi.settle.sys.Area" %>
 
-<div class="table table-bordered">
-    <table class="table">
-        <thead>
+<div>
+    <table class="table table-bordered">
             <tr><td>
                 <div class='form-group required'>
                     <label class='control-label col-xs-2' for="code">
@@ -98,9 +97,6 @@
                 </div>
             </div>
         </tr></td>
-
-
-        </thead>
     </table>
 </div>
 

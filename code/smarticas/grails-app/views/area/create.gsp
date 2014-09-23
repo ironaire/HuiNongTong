@@ -17,7 +17,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form class='form-horizontal' url="[resource:areaInstance, action:'save']" >
+			<g:form url="[resource:areaInstance, action:'save']" >
 					<g:render template="form"/>
 				<div class="form-group">
                     <div class='col-xs-2 col-xs-offset-4'>
