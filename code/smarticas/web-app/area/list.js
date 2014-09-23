@@ -19,9 +19,8 @@ $('#table').DataTable({
                     return '<a href="' + showLink + '/' + row[0] + '">' + data + '</a>';
                 }
             },
-            {"targets": 3, "name": "name"},
-            {"targets": 4, "name": "level", 'searchable': false},
-            {"targets": 5, "name": "operation",
+            {"targets": 3, "name": "level", 'searchable': false},
+            {"targets": 4, "name": "operation",
                 'searchable': false, 'orderable': false,
                 "render": function(data, type, row) {
                     return '<a href="' + editLink + '/' + row[0] + '">' + editLabel + '</a>';

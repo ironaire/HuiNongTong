@@ -79,7 +79,7 @@ table {
 }
 
 /* form-control required style */
-.form-group.required .control-label:after {
+.form-group.required .control-label:before {
     content: "*";
     color: red;
 }
@@ -102,4 +102,14 @@ table {
     background: url("../images/top-bg.png");
     height: 80px;
     color:#FFFFFF;
+}
+
+.form-style {
+    width: 100%;
+    text-align: center;
+    vertical-align:baseline;
+}
+
+.form-td-style {
+    valign:baseline;
 }

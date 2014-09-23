@@ -6,7 +6,7 @@
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<div id="create-area" class="container col-md-12 table-bordered top10">
+		<div id="create-area" class="top10">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

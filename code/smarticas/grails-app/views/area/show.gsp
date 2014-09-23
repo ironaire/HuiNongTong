@@ -16,7 +16,7 @@
 			    <tbody>
 				<g:if test="${areaInstance?.code}">
 				<tr>
-					<td><g:message code="area.code.label" default="Code" /></td>
+					<td width="25%"><g:message code="area.code.label" default="Code" /></td>
 					
 						<td><g:fieldValue bean="${areaInstance}" field="code"/></td>
 					
@@ -77,34 +77,37 @@
 				</tr>
 				</g:if>
 			
-				<g:if test="${areaInstance?.parent}">
 				<tr>
 					<td><g:message code="area.parent.label" default="Parent" /></td>
 					
 						<td>
-                            <g:link controller='area' action='show'
-                                id="${areaInstance?.parent?.name}">
-                                ${areaInstance?.parent?.encodeAsHTML()}
-                            </g:link>
-                        </td>
-					
-				</tr>
-				</g:if>
-			
-				<g:if test="${areaInstance?.children}">
+                            <g:if test="${areaInstance?.parent}">
+                                <g:link controller='area' action='show'
+                                    id="${areaInstance?.parent?.name}">
+                                    ${areaInstance?.parent?.encodeAsHTML()}
+                                </g:link>
+                            </g:if>
+                            <g:else><g:message code="select.no.label" default="No" />
+                            </g:else>
+                    </td>
+                </tr>
+
 				<tr>
 					<td><g:message code="area.children.label" default="Children" /></td>
-					
-						<g:each in="${areaInstance.children}" var="c">
-						<td><g:link controller='area' action='show'
+                <td>
+                <g:if test="${areaInstance?.children}">
+                    <g:each in="${areaInstance.children}" var="c">
+						<g:link controller='area' action='show'
                         id="${c?.id}">
                             ${c?.encodeAsHTML()}
-                            </g:link></td>
+                            </g:link>
 						</g:each>
-					
+                </g:if>
+                <g:else><g:message code="select.no.label" default="No" />
+                </g:else>
+                </td>
 				</tr>
-				</g:if>
-			
+
 				<g:if test="${areaInstance?.organizations}">
 				<tr>
 					<td><g:message code="area.organizations.label" default="Organizations" /></td>
@@ -115,7 +118,6 @@
                         ${o?.encodeAsHTML()}
                         </g:link></td>
 						</g:each>
-					
 				</tr>
 				</g:if>
 			

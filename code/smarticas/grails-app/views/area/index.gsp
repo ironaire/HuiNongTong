@@ -17,12 +17,11 @@
 			</g:if>
             <table class='display' id='table'>
                 <thead class="info">
-                    <th><g:message code='operation.label' /></th>
                     <th><g:message code='id.label' /></th>
                     <th><g:message code='area.code.label' /></th>
-                    <th><g:message code='area.parent.label' /></th>
-                    <th><g:message code='area.spell.label' /></th>
+                    <th><g:message code='area.name.label' /></th>
                     <th><g:message code='area.level.label' /></th>
+                    <th><g:message code='operation.label' /></th>
                 </thead>
                 <tbody></tbody>
             </table>
