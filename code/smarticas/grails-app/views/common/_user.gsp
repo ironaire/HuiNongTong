@@ -9,15 +9,15 @@
         </a>
         <ul class="dropdown-menu" role="menu">
             <!-- TODO: Only show menu items based on permissions -->
-            <li class=""><g:link controller="home" action="profile">
+            <li class=""><g:link controller="home" action="showProfile">
                 <i class="glyphicon glyphicon-user"></i>
                 <g:message code="user.profile.label"/>
             </g:link></li>
-            <li class=""><g:link controller="login" action="userPassword">
+            <li class=""><g:link controller="home" action="changePassword">
                 <i class="glyphicon glyphicon-lock"></i>
                 <g:message code="user.change.password.label"/>
             </g:link></li>
-            <li class=""><g:link controller="login" action="userEmail">
+            <li class=""><g:link controller="home" action="changeEmail">
                 <i class="glyphicon glyphicon-comment"></i>
                 <g:message code="user.change.email.label"/>
             </g:link></li>
