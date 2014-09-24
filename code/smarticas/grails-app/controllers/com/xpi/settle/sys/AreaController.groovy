@@ -52,7 +52,6 @@ class AreaController {
                 area.id,
                 area.code,
                 area.name,
-                area.spell,
                 area.level
             ]
         }

@@ -11,6 +11,34 @@ hibernate {
 environments {
     development {
         dataSource {
+            /*dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            pooled = true
+            jmxExport = true
+            driverClassName = "org.h2.Driver"
+            username = "sa"
+            password = ""
+            */
+
+            dbCreate = "update"
+            url = "jdbc:mysql://localhost:3306/smarticas_test"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            username = "admin"
+            password = "admin"
+        }
+    }
+    test {
+        dataSource {
+            /*
+            dbCreate = "update"
+            url = "jdbc:mysql://localhost:3306/smarticas_test"
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
+            username = "admin"
+            password = "admin"
+            */
+
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
             pooled = true
@@ -18,16 +46,6 @@ environments {
             driverClassName = "org.h2.Driver"
             username = "sa"
             password = ""
-        }
-    }
-    test {
-        dataSource {
-            dbCreate = "update"
-            url = "jdbc:mysql://localhost:3306/smarticas_test"
-            driverClassName = "com.mysql.jdbc.Driver"
-            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-            username = "admin"
-            password = "admin"
 
             pooled = true
             properties {
