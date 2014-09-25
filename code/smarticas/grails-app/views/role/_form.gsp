@@ -1,6 +1,9 @@
 <%@ page import="com.xpi.settle.sys.Role" %>
 
-
+<div>
+    <table class="table table-bordered text-right">
+        <tr>
+            <td>
 
 <div class="form-group required">
 	<label class='control-label col-xs-2' for="authority">
@@ -12,3 +15,6 @@
 
 </div>
 
+            </td></tr>
+    </table>
+</div>

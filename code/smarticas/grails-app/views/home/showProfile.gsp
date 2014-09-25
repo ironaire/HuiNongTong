@@ -8,14 +8,7 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-        <ul class="nav nav-pills table-bordered">
-            <li>
-                <g:link action="changeProfile" id="${params.id}">
-                    <i class="glyphicon glyphicon-pencil"></i> 
-                    <g:message code="user.info.edit.label"/>
-                </g:link>
-            </li>
-        </ul>
+
 		<div id="show-user" class="top10 content scaffold-show" role="main">
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>

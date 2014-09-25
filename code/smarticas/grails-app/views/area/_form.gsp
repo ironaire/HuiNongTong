@@ -1,7 +1,7 @@
 <%@ page import="com.xpi.settle.sys.Area" %>
 
 <div>
-    <table class="table table-bordered">
+    <table class="table table-bordered text-right">
             <tr><td>
                 <div class='form-group required'>
                     <label class='control-label col-xs-2' for="code">
@@ -12,6 +12,7 @@
                 </div>
                 </div>
             </td></tr>
+
             <tr><td>
                 <div class='form-group required'>
                     <label class='control-label col-xs-2' for="name">
@@ -33,7 +34,7 @@
                     <g:field class='form-control' name="level" type="number" min="0" required="" value="${areaInstance.level}"/>
                 </div>
             </div>
-        </tr></td>
+        </td></tr>
 
         <tr><td>
         <div class='form-group'>
@@ -48,43 +49,7 @@
                 value="${areaInstance?.parent?.id}" class="many-to-one"/>
             </div>
         </div>
-        </tr></td>
-
-        <tr><td>
-            <div class='form-group'>
-                <label class='control-label col-xs-2' for="children">
-                    <g:message code="area.children.label" default="Children" />
-                </label>
-                <div class='col-xs-4'>
-                    <ul class="one-to-many">
-                    <g:each in="${areaInstance?.children?}" var="c">
-                        <li><g:link controller="area" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-                    </g:each>
-                    <li class="add">
-                    <g:link controller="area" action="create" params="['area.id': areaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'area.label', default: 'Area')])}</g:link>
-                    </li>
-                    </ul>
-                </div>
-        </div>
-        </tr></td>
-
-        <tr><td>
-            <div class='form-group'>
-	            <label class='control-label col-xs-2' for="organizations">
-		            <g:message code="area.organizations.label" default="Organizations" />
-                </label>
-                <div class='col-xs-4'>
-                    <ul class="one-to-many">
-                    <g:each in="${areaInstance?.organizations?}" var="o">
-                        <li><g:link controller="organization" action="show" id="${o.id}">${o?.encodeAsHTML()}</g:link></li>
-                    </g:each>
-                    <li class="add">
-                    <g:link controller="organization" action="create" params="['area.id': areaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'organization.label', default: 'Organization')])}</g:link>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            </td></tr>
+        </td></tr>
 
         <tr><td>
             <div class='form-group'>
@@ -96,7 +61,7 @@
 
                 </div>
             </div>
-        </tr></td>
+        </td></tr>
     </table>
 </div>
 

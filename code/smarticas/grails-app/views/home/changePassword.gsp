@@ -22,8 +22,12 @@
                     value="${cmdInstance?.versionValue}" />
 				<g:hiddenField name="idValue"
                     value="${cmdInstance?.idValue}" />
-                <div class="form-group required">
-                    <label class='control-label col-xs-2' for="currentPassword">
+<table class="table table-bordered text-right">
+    <tr>
+        <td>
+
+            <div class="form-group required">
+                <label class='control-label col-xs-2' for="currentPassword">
                         <g:message code="user.current.password.label" />
                         
                     </label>
@@ -33,6 +37,12 @@
 
                 </div>
                 </div>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
                 <div class="form-group required">
                     <label class='control-label col-xs-2' for="newPassword">
                         <g:message code="user.new.password.label" />
@@ -43,6 +53,12 @@
 
                 </div>
                 </div>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
                 <div class="form-group required">
                     <label class='control-label col-xs-2' for="confirmPassword">
                         <g:message code="user.confirm.password.label" />
@@ -55,6 +71,11 @@
                 </div>
                 </div>
 
+        </td>
+    </tr>
+
+</table>
+
 				<div class="form-group">
                     <div class='col-xs-2 col-xs-offset-4'>
 					<g:submitButton name="update" class="btn btn-primary"
@@ -66,6 +87,7 @@
                         value="${message(code: 'default.button.reset.label')}" />
                 </div>
 				</div>
+
 			</g:form>
 		</div>
 	</body>
