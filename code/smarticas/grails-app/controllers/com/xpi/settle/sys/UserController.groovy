@@ -40,6 +40,7 @@ class UserController {
                                 offset: firstResult,
                                 sort: sort,
                                 order: orderDir) { 
+            ne('username', 'smarticas')
             ne('id', principal.id)
             createAlias('organization', 'o')
             if(sort == 'organization') {

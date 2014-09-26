@@ -9,7 +9,7 @@ $('#table').DataTable({
         },
         "columnDefs": [
             {"targets": 0, "name": "id", "visible": false},
-            {"targets": 1, "name": "authority",
+            {"targets": 1, "name": "name",
                 "render": function(data, type, row) {
                     return '<a href="' + showLink + '/' + row[0] + '">' + data + '</a>';
                 }

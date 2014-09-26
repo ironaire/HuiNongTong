@@ -37,6 +37,7 @@ class OrganizationController {
                                 offset: firstResult,
                                 sort: sort,
                                 order: orderDir) { 
+            ne('name', 'Smarticas')
             createAlias('area', 'a')
             if(sort == 'area') {
                 order('a.name', orderDir)

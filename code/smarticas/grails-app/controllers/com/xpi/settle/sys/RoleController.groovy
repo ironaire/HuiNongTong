@@ -36,9 +36,10 @@ class RoleController {
                                 offset: firstResult,
                                 sort: sort,
                                 order: orderDir) { 
+            ne('authority', 'ROLE_ADMIN')
             if(filter != '') {
                 or {
-                    ilike('authority', "%$filter%")
+                    ilike('name', "%$filter%")
                 }
             }
         }
@@ -48,7 +49,7 @@ class RoleController {
         roles.each { role -> 
             rolesTable << [
                 role.id,
-                role.authority
+                role.name
             ]
         }
 
@@ -71,6 +72,9 @@ class RoleController {
             notFound()
             return
         }
+
+        def count = Role.createCriteria().count {}
+        roleInstance.authority = 'ROLE_' + (count ++)
 
         if (roleInstance.hasErrors()) {
             respond roleInstance.errors, view:'create'

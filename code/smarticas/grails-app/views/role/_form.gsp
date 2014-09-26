@@ -10,7 +10,8 @@
 		<g:message code="role.authority.label" default="Authority" />
 	</label>
     <div class='col-xs-4'>
-	<g:textField class='form-control' name="authority" required="" value="${roleInstance?.authority}"/>
+	<g:textField class='form-control' name="name" required=""
+        value="${roleInstance?.name}"/>
     </div>
 
 </div>

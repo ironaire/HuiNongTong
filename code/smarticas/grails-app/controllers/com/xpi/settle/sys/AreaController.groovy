@@ -36,6 +36,7 @@ class AreaController {
                                 offset: firstResult,
                                 sort: sort,
                                 order: orderDir) { 
+            ne('name', 'Smarticas')
             if(filter != '') {
                 or {
                     ilike('code', "%$filter%")

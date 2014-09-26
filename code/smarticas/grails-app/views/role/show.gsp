@@ -14,14 +14,11 @@
 			</g:if>
 			<table class="table table-bordered">
 			<tbody>
-				<g:if test="${roleInstance?.authority}">
 				<tr>
-					<td><g:message code="role.authority.label" default="Authority" /></td>
+					<td><g:message code="role.authority.label" /></td>
 					
-						<td><g:fieldValue bean="${roleInstance}" field="authority"/></td>
-					
+                    <td><g:fieldValue bean="${roleInstance}" field="name"/></td>
 				</tr>
-				</g:if>
 			</tbody>
 			</table>
             <!--
