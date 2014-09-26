@@ -19,8 +19,6 @@
 			</g:hasErrors>
 			<g:form url="[resource:roleInstance, action:'save']" 
                 class='form-horizontal'>
-				<g:hiddenField name="authority" 
-                    value="${com.xpi.settle.sys.Role.list().length}" />
                 <g:render template="form"/>
 				<div class="form-group">
                     <div class='col-xs-2 col-xs-offset-4'>

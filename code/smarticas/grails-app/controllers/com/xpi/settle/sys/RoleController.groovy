@@ -73,9 +73,12 @@ class RoleController {
             return
         }
 
-        def count = Role.createCriteria().count {}
-        roleInstance.authority = 'ROLE_' + (count ++)
+        roleInstance.clearErrors()
 
+        def count = Role.createCriteria().count {}
+        roleInstance.authority = 'ROLE_CUSTOM_' + (++count)
+
+        roleInstance.validate()
         if (roleInstance.hasErrors()) {
             respond roleInstance.errors, view:'create'
             return
@@ -85,7 +88,7 @@ class RoleController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'roleInstance.label', default: 'Role'), roleInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'roleInstance.label', default: 'Role'), roleInstance])
                 redirect roleInstance
             }
             '*' { respond roleInstance, [status: CREATED] }
