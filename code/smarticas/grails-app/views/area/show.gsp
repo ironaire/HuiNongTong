@@ -43,27 +43,6 @@
 				</tr>
 			
 				<tr>
-					<td><g:message code="area.reserve1.label" default="Reserve1" /></td>
-					
-						<td><g:fieldValue bean="${areaInstance}" field="reserve1"/></td>
-					
-				</tr>
-			
-				<tr>
-					<td><g:message code="area.reserve2.label" default="Reserve2" /></td>
-					
-						<td><g:fieldValue bean="${areaInstance}" field="reserve2"/></td>
-					
-				</tr>
-			
-				<tr>
-					<td><g:message code="area.reserve3.label" default="Reserve3" /></td>
-					
-						<td><g:fieldValue bean="${areaInstance}" field="reserve3"/></td>
-					
-				</tr>
-			
-				<tr>
 					<td><g:message code="area.parent.label" default="Parent" /></td>
 					
 						<td>

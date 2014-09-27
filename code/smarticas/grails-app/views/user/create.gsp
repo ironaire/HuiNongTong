@@ -7,7 +7,6 @@
 	</head>
 	<body>
 		<div id="create-user" class="top10 content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -18,8 +17,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:userInstance, action:'save']" 
-                class='form-horizontal'>
+			<g:form url="[resource:userInstance, action:'save']"'>
                 <g:render template="createForm"/>
 				<div class="form-group">
                     <div class='col-xs-2 col-xs-offset-4'>
