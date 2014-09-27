@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <g:layoutHead/>
 
-    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}"/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
     <r:require modules="bootstrap, custom"/>
 
     <r:layoutResources/>
