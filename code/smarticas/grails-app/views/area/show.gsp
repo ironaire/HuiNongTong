@@ -88,9 +88,14 @@
                         </g:else>
                     </td>
 				</tr>
-			
                 </tbody>
 			</table>
+                <div class='col-xs-2 col-xs-offset-5'>
+                    <g:link action='index'>
+                        <input type='button' class='btn btn-primary' 
+                            value="${message(code: 'return.label')}" />   
+                    </g:link>
+                </div>
             <!--
 			<g:form url="[resource:areaInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
