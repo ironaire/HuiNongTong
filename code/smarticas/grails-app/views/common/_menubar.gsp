@@ -1,7 +1,7 @@
 <g:if test="${!layout_nomenubar}">
     <div class="container col-md-12 top-style">
         <div class="col-md-2" >
-            <g:img dir='custom/images' file="tongbaoyi-logo.png" width="180" height="80"/>
+            <g:img dir='custom/images' file="tongbaoyi-logo.png" width="180" height="100"/>
         </div>
         <div class="col-md-10 hidden-xs hidden-sm">
         <h2>

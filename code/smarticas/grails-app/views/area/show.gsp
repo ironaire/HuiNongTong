@@ -10,7 +10,7 @@
 	<body>
 		<div id="show-area" class="content scaffold-show" role="main">
 			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
+			<div class="message text-danger text-center" role="status">${flash.message}</div>
 			</g:if>
 			<table class="table table-bordered">
 			    <tbody>

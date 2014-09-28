@@ -21,9 +21,8 @@
                     <th><g:message code='organization.address.label' /></th>
                     <th><g:message code='organization.leader.label' /></th>
                     <th><g:message code='organization.contact.label' /></th>
-                    <th><g:message code='organization.bank.label' /></th>
                     <th><g:message code='organization.level.label' /></th>
-                    <th><g:message code='area.label' /></th>
+                    <th><g:message code='organization.area.label' /></th>
                     <th><g:message code='operation.label' /></th>
 				</thead>
 				<tbody>

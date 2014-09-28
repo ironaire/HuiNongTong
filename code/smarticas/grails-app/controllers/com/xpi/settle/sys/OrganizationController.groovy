@@ -49,7 +49,6 @@ class OrganizationController {
                     ilike('address', "%$filter%")
                     ilike('leader', "%$filter%")
                     ilike('contact', "%$filter%")
-                    ilike('bank', "%$filter%")
                     ilike('a.name', "%$filter%")
                     ilike('a.name', "%$filter%")
                 }
@@ -66,7 +65,6 @@ class OrganizationController {
                 organization.address,
                 organization.leader,
                 organization.contact,
-                organization.bank,
                 organization.level,
                 organization.area?.name
             ]

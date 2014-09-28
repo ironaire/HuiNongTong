@@ -18,7 +18,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form class='form-horizontal' url="[resource:areaInstance, action:'update']" method="PUT" >
+			<g:form url="[resource:areaInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${areaInstance?.version}" />
                 <g:render template="form"/>
                 <div class='form-group'>

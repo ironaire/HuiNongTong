@@ -17,7 +17,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form controller='home' action='updatePassword' class='form-horizontal'>
+			<g:form controller='home' action='updatePassword'>
 				<g:hiddenField name="versionValue"
                     value="${cmdInstance?.versionValue}" />
 				<g:hiddenField name="idValue"
